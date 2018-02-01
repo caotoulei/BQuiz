@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BQuiz.Controllers
+namespace VueJSNetCore.Controllers
 {
     [Route("api/[controller]")]
     public class SampleDataController : Controller
@@ -27,6 +27,18 @@ namespace BQuiz.Controllers
             });
         }
 
+        [HttpGet("[action]")]
+        public IEnumerable<Question> Questions()
+        {
+            var questions = new List<Question>();
+            questions.Add(new Question(){QuestionBody = "Does a cat run fast?", AnswerOption1="option 1", AnswerOption2="option 2", AnswerOption3 = "option 3", AnswerOption4 = "option 4"});
+            questions.Add(new Question(){QuestionBody = "Can a dog fly?", AnswerOption1="option 1", AnswerOption2="option 2", AnswerOption3 = "option 3", AnswerOption4 = "option 4"});
+            questions.Add(new Question(){QuestionBody = "Can a dolphin ski?", AnswerOption1="option 1", AnswerOption2="option 2", AnswerOption3 = "option 3", AnswerOption4 = "option 4"});
+            questions.Add(new Question(){QuestionBody = "Can an elephant play piano?", AnswerOption1="option 1", AnswerOption2="option 2", AnswerOption3 = "option 3", AnswerOption4 = "option 4"});
+            questions.Add(new Question(){QuestionBody = "Can a panguin surf?", AnswerOption1="option 1", AnswerOption2="option 2", AnswerOption3 = "option 3", AnswerOption4 = "option 4"});
+            return questions;
+        }
+
         public class WeatherForecast
         {
             public string DateFormatted { get; set; }
@@ -40,6 +52,15 @@ namespace BQuiz.Controllers
                     return 32 + (int)(TemperatureC / 0.5556);
                 }
             }
+        }
+
+        public class Question
+        {
+            public string QuestionBody { get; set; }
+            public string AnswerOption1 { get; set; }
+            public string AnswerOption2 { get; set; }
+            public string AnswerOption3 { get; set; }
+            public string AnswerOption4 { get; set; }
         }
     }
 }
