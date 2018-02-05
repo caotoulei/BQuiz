@@ -3,18 +3,18 @@
         <h1>Start Quiz</h1>
         <p>Welcome to your Start Quiz</p>
 
-        <p v-if="questions.length">
+        <!--<p v-if="questions.length">
             <ul v-for="item in questions">
                 <li>
                     {{ item.questionBody }} <br/>
-                    <input type="radio" id="index_opt1"> <label for="opt1">{{ item.answerOption1 }}</label></input>
-                    <input type="radio" id="index_opt2"> <label for="opt2">{{ item.answerOption2 }}</label></input>
-                    <input type="radio" id="index_opt3"> <label for="opt3">{{ item.answerOption3 }}</label></input>
-                    <input type="radio" id="index_opt4"> <label for="opt4">{{ item.answerOption4 }}</label></input>
+                    <input type="radio" :id="item.id+'opt1'" name="item.answerId"> <label for="">{{ item.answerOption1 }}</label></input>
+                    <input type="radio" :id="item.id" name="item.answerId"> <label for="">{{ item.answerOption2 }}</label></input>
+                    <input type="radio" :id="item.id" vname="item.answerId"> <label for="">{{ item.answerOption3 }}</label></input>
+                    <input type="radio" :id="item.id" name="item.answerId"> <label for="">{{ item.answerOption4 }}</label></input>
                 </li>
             </ul>
         </p>
-        <p v-else><em>Loading...</em></p>
+        <p v-else><em>Loading...</em></p>-->
     </div>
 </template>
 

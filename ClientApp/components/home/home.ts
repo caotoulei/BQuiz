@@ -2,11 +2,13 @@
 import { Component } from 'vue-property-decorator';
 
 interface Question {
+    id: number;
     questionBody: string;
     answerOption1: string;
     answerOption2: string;
     answerOption3: string;
     answerOption4: string;
+    answerId : number;
 }
 
 @Component
