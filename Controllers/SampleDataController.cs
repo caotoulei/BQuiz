@@ -39,29 +39,38 @@ namespace VueJSNetCore.Controllers
             return questions;
         }
 
-        public class WeatherForecast
+        [HttpGet("[action]")]
+        public Question Question()
         {
-            public string DateFormatted { get; set; }
-            public int TemperatureC { get; set; }
-            public string Summary { get; set; }
+            return new Question() { Id = 1, QuestionBody = "Does a cat run fast?", AnswerOption1 = "option 1", AnswerOption2 = "option 2", AnswerOption3 = "option 3", AnswerOption4 = "option 4" };
+        }
 
-            public int TemperatureF
+
+      
+    }
+
+    public class WeatherForecast
+    {
+        public string DateFormatted { get; set; }
+        public int TemperatureC { get; set; }
+        public string Summary { get; set; }
+
+        public int TemperatureF
+        {
+            get
             {
-                get
-                {
-                    return 32 + (int)(TemperatureC / 0.5556);
-                }
+                return 32 + (int)(TemperatureC / 0.5556);
             }
         }
+    }
 
-        public class Question
-        {
-            public int Id { get; set; }
-            public string QuestionBody { get; set; }
-            public string AnswerOption1 { get; set; }
-            public string AnswerOption2 { get; set; }
-            public string AnswerOption3 { get; set; }
-            public string AnswerOption4 { get; set; }
-        }
+    public class Question
+    {
+        public int Id { get; set; }
+        public string QuestionBody { get; set; }
+        public string AnswerOption1 { get; set; }
+        public string AnswerOption2 { get; set; }
+        public string AnswerOption3 { get; set; }
+        public string AnswerOption4 { get; set; }
     }
 }

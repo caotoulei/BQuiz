@@ -14,12 +14,18 @@ interface Question {
 @Component
 export default class HomeComponent extends Vue {
     questions: Question[] = [];
+    currentQuestion : Question;
 
     mounted() {
         fetch('api/SampleData/Questions')
             .then(response => response.json() as Promise<Question[]>)
             .then(data => {
                 this.questions = data;
+            });
+        fetch('api/SampleData/Question')
+            .then(response => response.json() as Promise<Question>)
+            .then(data => {
+                this.currentQuestion = data;
             });
     }
 }
