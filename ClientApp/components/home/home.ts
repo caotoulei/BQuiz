@@ -1,7 +1,7 @@
 ﻿import Vue from 'vue';
 import { Component } from 'vue-property-decorator';
 
-interface Question {
+class Question {
     id: number;
     questionBody: string;
     answerOption1: string;
@@ -14,7 +14,7 @@ interface Question {
 @Component
 export default class HomeComponent extends Vue {
     questions: Question[] = [];
-    currentQuestion : Question;
+    currentQuestion : Question = new Question();
 
     mounted() {
         fetch('api/SampleData/Questions')
