@@ -1,12 +1,12 @@
 ﻿<template>
     <div>
        
-        <span>{{currentQuestion.questionBody}}</span><br />
+        <label>{{currentQuestion.questionBody}}</label><br />
         <input type="radio" :id="currentQuestion.id+'opt1'" name="currentQuestion.answerId"> <label for="">{{ currentQuestion.answerOption1 }}</label></input>
         <input type="radio" :id="currentQuestion.id+'opt2'" name="currentQuestion.answerId"> <label for="">{{ currentQuestion.answerOption2 }}</label></input>
         <input type="radio" :id="currentQuestion.id+'opt3'" name="currentQuestion.answerId"> <label for="">{{ currentQuestion.answerOption3 }}</label></input>
         <input type="radio" :id="currentQuestion.id+'opt4'" name="currentQuestion.answerId"> <label for="">{{ currentQuestion.answerOption4 }}</label></input>
-        <br>
+        <br><br />
         <input type="button" class="" value="Next" />
     </div>
 </template>
