@@ -11,11 +11,18 @@ class Question {
     answerId : number;
 }
 
+class MyObj{
+    id: number;
+    content: string;
+}
+
 @Component
 export default class QuestionAndOptionsComponent extends Vue {
     questions: Question[] = [];
     currentQuestion : Question = new Question();
-
+    props: {
+        propObj: { type: MyObj, required: false, default : new MyObj({ id: 0, content : "wow" }) }
+    },
     mounted() {
         fetch('api/SampleData/Questions')
             .then(response => response.json() as Promise<Question[]>)
