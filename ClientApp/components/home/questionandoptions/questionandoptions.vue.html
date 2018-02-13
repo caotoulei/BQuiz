@@ -8,7 +8,8 @@
         <input type="radio" :id="currentQuestion.id+'opt4'" name="currentQuestion.answerId"> <label :for="currentQuestion.id+'opt4'">{{ currentQuestion.answerOption4 }}</label></input>
         <br><br />
         <input type="button" class="" value="Next" />
-        <span> {{ currentQuestion.propObj.content }}</span>
+
+        <span> Number: {{ imperfectNumber }}</span>
     </div>
 </template>
 <script src="./questionandoptions.ts"></script>
